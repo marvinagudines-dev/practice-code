@@ -5,7 +5,7 @@
 <div class="max-w-2xl mx-auto mt-5 mb-5">
 
     <form
-        action="<?= base_url('auth/login-account')?>"
+        action="<?= base_url('auth/register-account') ?>"
         method="POST"
         class="mx-auto max-w-md space-y-4 rounded-lg border border-gray-300 bg-gray-100 p-6"
         autocomplete="off">
@@ -13,8 +13,36 @@
         <?= csrf_field() ?>
 
         <h1 class="text-4xl font-bold text-gray-700 text-center">
-            Login
+            Register Account
         </h1>
+
+        <div>
+            <label class="block text-sm font-medium text-gray-900" for="first_name">
+                First Name
+            </label>
+
+            <input
+                class="mt-1 w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:outline-none"
+                id="first_name"
+                name="first_name"
+                type="text"
+                placeholder="John" 
+                required/>
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium text-gray-900" for="last_name">
+                Last Name
+            </label>
+
+            <input
+                class="mt-1 w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:outline-none"
+                id="last_name"
+                name="last_name"
+                type="text"
+                placeholder="Doe" 
+                required/>
+        </div>
 
         <div>
             <label class="block text-sm font-medium text-gray-900" for="email_address">
@@ -24,8 +52,8 @@
             <input
                 class="mt-1 w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:outline-none"
                 id="email_address"
-                type="email"
                 name="email_address"
+                type="email"
                 placeholder="example@gmail.com" 
                 required/>
         </div>
@@ -38,10 +66,26 @@
             <input
                 class="mt-1 w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:outline-none password-input"
                 id="password"
-                type="password"
                 name="password"
+                type="password"
                 placeholder="Password"
-                required />
+                pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}"
+                title="Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character."
+                required>
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium text-gray-900" for="confirm_password">
+                Confirm Password
+            </label>
+
+            <input
+                class="mt-1 w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:outline-none password-input"
+                id="confirm_password"
+                name="confirm_password"
+                type="password"
+                placeholder="Confirm Password" 
+                required/>
         </div>
 
         <div class="flex flex-col items-start gap-3">

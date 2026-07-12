@@ -1,4 +1,2 @@
 @import "tailwindcss";
-@plugin "flowbite/plugin";
-@source "../../app/Views";
-@source "../../node_modules/flowbite";
+@plugin "@tailwindcss/forms";
